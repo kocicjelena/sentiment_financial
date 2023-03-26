@@ -1,0 +1,27 @@
+version: '3'
+
+services: 
+  nlp:
+    build: ./nlp
+    # volumes:
+    #   - ./app:/usr/src/app
+    ports:
+      - 5000:5000
+    networks:
+      - twitter_network
+# nextjs-ui:
+#     build:
+#       context: ./nextapp
+#     ports:
+#       - "3000:3000"
+#     container_name: nextjs-ui
+#     stdin_open: true
+#     volumes:
+#        - ./my-app:/usr/src/app/my-app
+#        - /usr/src/app/my-app/node_modules
+    
+networks:
+  twitter_network:
+    name: twitter_network
+# volumes:
+#   app:
